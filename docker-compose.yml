@@ -1,0 +1,16 @@
+version: '3'
+
+networks:
+  dev:
+    external: true
+
+services:
+  nginx:
+    image: nginx:1.17.10
+    container_name: nginx
+    volumes:
+      - ./default.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    networks:
+      - dev
